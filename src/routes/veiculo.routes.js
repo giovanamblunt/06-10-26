@@ -9,4 +9,12 @@ veiculosRouter.get("/", async (req, res) => {
     } catch (error) {
         console.error(error);
     }
+    veiculosRouter.post("/", async (req, res) => {
+        try {
+            const veiculos = await veiculosService.listarVeiculos()
+            res.json(veiculos);
+        } catch (error) {
+            console.error(error);
+        }
+    })
 })
